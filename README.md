@@ -1,6 +1,4 @@
-Home of the "traits working group", affiliated with the compiler and
-lang teams. This repository is used to house draft RFCs, notes, and
-other related documents.
+# Traits Working Group
 
 # Scope and purpose
 
@@ -21,21 +19,30 @@ to the existing solver where needed.
 
 [Chalk-style]: https://github.com/rust-lang-nursery/chalk
 
-# How to participate
+## Design meetings
+
+We hold weekly design meetings where we talk in depth about various
+topics ([calendar event][ce-design]).  These meetings take place on Zulip (see below). The goal is
+not just to figure out what we want to do, it's also a way to spread
+knowledge. Feel free to come and lurk!
+
+[ce-design]: https://calendar.google.com/event?action=TEMPLATE&tmeid=MnFmbmdkaGV0aXE3Zjc4cjlpNWVjNDRoZXMgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&tmsrc=6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com
+
+You'll find minutes from past meetings in [the minutes directory](minutes).
 
 ## Chat forum
 
-On [the rust-lang Zulip][z], in [the `#t-compiler/wg-traits` stream][s].
+On [the rust-lang Zulip][z], in [the `#wg-traits` stream][s].
 
 [z]: https://rust-lang.zulipchat.com/
-[s]: https://rust-lang.zulipchat.com/#narrow/stream/144729-t-compiler.2Fwg-traits
+[s]: https://rust-lang.zulipchat.com/#narrow/stream/144729-wg-traits
 
-## Weekly triage meeting
+## Dedicated repository
 
-There is a weekly triage meeting which you will find on the [compiler
-meeting calendar][c]. The purpose of this meeting is to take stock of
-where we are and figure out what to do next. The meeting takes place
-on [Zulip][z] in a dedicated topic of the [the `#t-compiler/wg-traits`
-stream][s].
+Documents related to the wg-traits working group are stored on a
+dedicated repository, [rust-lang/wg-traits]. This repository contains
+meeting minutes, past sprints, as well as draft RFCs and other
+documents.
 
-[c]: https://github.com/rust-lang/compiler-team#meeting-calendar
+
+
