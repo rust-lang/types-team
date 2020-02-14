@@ -11,7 +11,7 @@ items = [
 name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
-  { label = "write-up the idea that Niko had", href="http://example.org" },
+  { label = "write-up the idea that Niko had" },
   { label = "build prototype and evaluate" },
 ]
 
@@ -36,10 +36,11 @@ items = [
 name = "map-chalk-types-to-rustc-types"
 label = "Map chalk types to rustc types"
 items = [
+  { label = "Make intern methods take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328" },
+  { label = "Make data methods take &amp;self" },
   { label = "Move Identifier to TypeFamily" },
   { label = "Adapt rutsc's debruijn index model", port="debruijn" },
   { label = "Remove all vectors, boxes" },
-  { label = "Make intern methods take &amp;self" },
 ]
 
 [[group]]
