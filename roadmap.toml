@@ -53,4 +53,18 @@ items = [
   { label="create" },
 ]
 
+[[group]]
+name = "advanced-features"
+label = "Advanced features"
+requires = [ "rustc-integration-mvp" ]
+items = [
+  { label="implied bounds" },
+]
 
+[[group]]
+name = "library"
+label = "Usable as a standalone library for traits solving"
+requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
+items = [
+  { label="implied bounds" },
+]
