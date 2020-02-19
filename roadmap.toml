@@ -38,6 +38,7 @@ label = "Map chalk types to rustc types"
 items = [
   { label = "Make intern methods take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328" },
   { label = "Make data methods take &amp;self" },
+  { label = "Align placeholders and ty::Param" },
   { label = "Move Identifier to TypeFamily" },
   { label = "Adapt rutsc's debruijn index model", port="debruijn" },
   { label = "Remove all vectors, boxes" },
