@@ -16,10 +16,17 @@ items = [
 ]
 
 [[group]]
+name = "impl-trait"
+label = "Model `impl Trait`"
+items = [
+  { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" }
+]  
+
+[[group]]
 name = "rust-analyzer-integration"
 label = "Integrate with rust-analyzer"
+requires = ["impl-trait"]
 items = [
-  { label = "How to model impl Trait" },
   { label = "Ensure that we never need to ask for impls of unknown types", port = "askfor", requires = ["syntactic-semantic-equality"] },
   { label = "Deal with performance problems" },
   { label = "Deal with memory usage" },
@@ -28,7 +35,10 @@ items = [
 [[group]]
 name = "syntactic-semantic-equality"
 label = "Separate syntactic equality from semantic equality"
-requires = ["map-chalk-types-to-rustc-types:debruijn"]
+requires = [
+  "map-chalk-types-to-rustc-types:debruijn",
+  "map-chalk-types-to-rustc-types:visit"
+]
 status = "Blocked"
 items = [
 ]
@@ -44,7 +54,7 @@ items = [
   { label = "Move Identifier to TypeFamily" },
   { label = "Adapt rustc's debruijn index model", port="debruijn", status="Assigned", href="https://github.com/rust-lang/chalk/issues/334" },
   { label = "Remove all vectors, boxes" },
-  { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333" },
+  { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333", port="visit" },
 ]
 
 [[group]]
@@ -57,19 +67,21 @@ items = [
 ]
 
 [[group]]
-name = "advanced-features"
-label = "Advanced features"
-requires = [ "rustc-integration-mvp" ]
-status = "Blocked"
-items = [
-  { label="implied bounds" },
-]
-
-[[group]]
-name = "library"
-label = "Usable as a standalone library for traits solving"
+name = "features"
+label = "Explore proposed language features" 
 requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
 status = "Blocked"
 items = [
   { label="implied bounds" },
 ]
+
+[[goal]]
+name = "library"
+label = "Chalk usable as a standalone library for traits solving"
+requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
+
+[[goal]]
+name = "gats"
+label = "Deploy GATs in Rust nightly"
+requires = [ "align-rustc-predicate" ]
+
