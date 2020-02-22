@@ -11,7 +11,7 @@ items = [
 name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
-  { label = "Write-up the idea that Niko had", status="Complete" },
+  { label = "Write-up the idea that Niko had", status="Complete", href="https://gist.github.com/nikomatsakis/bfbdbe588d6fc61ecb09e3b51847fb7c" },
   { label = "Build prototype and evaluate", status="Blocked" },
 ]
 
@@ -28,8 +28,8 @@ label = "Integrate with rust-analyzer"
 requires = ["impl-trait"]
 items = [
   { label = "Ensure that we never need to ask for impls of unknown types", port = "askfor", requires = ["syntactic-semantic-equality"] },
-  { label = "Deal with performance problems" },
-  { label = "Deal with memory usage" },
+  { label = "Deal with performance problems", status = "Blocked" },
+  { label = "Deal with memory usage", status = "Blocked" },
 ]
 
 [[group]]
@@ -48,10 +48,12 @@ name = "map-chalk-types-to-rustc-types"
 label = "Map chalk types to rustc types"
 items = [
   { label = "Rename Projection to Alias", status="Complete" }, 
-  { label = "Make intern methods take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Assigned" },
-  { label = "Make data methods take &amp;self", status="Blocked" },
-  { label = "Align placeholders and ty::Param" },
-  { label = "Move Identifier to TypeFamily" },
+  { label = "Make ty intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Complete" },
+  { label = "Make ty data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/339", status="Assigned" },
+  { label = "Make other intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/340", status="Assigned" },
+  { label = "Make other data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/341", status="Assigned" },
+  { label = "Align placeholders and ty::Param", status="Blocked" },
+  { label = "Move Identifier to TypeFamily", status="Complete" },
   { label = "Adapt rustc's debruijn index model", port="debruijn", status="Assigned", href="https://github.com/rust-lang/chalk/issues/334" },
   { label = "Remove all vectors, boxes" },
   { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333", port="visit" },
