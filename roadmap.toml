@@ -11,8 +11,8 @@ items = [
 name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
-  { label = "write-up the idea that Niko had" },
-  { label = "build prototype and evaluate" },
+  { label = "Write-up the idea that Niko had", status="Complete" },
+  { label = "Build prototype and evaluate", status="Blocked" },
 ]
 
 [[group]]
@@ -29,6 +29,7 @@ items = [
 name = "syntactic-semantic-equality"
 label = "Separate syntactic equality from semantic equality"
 requires = ["map-chalk-types-to-rustc-types:debruijn"]
+status = "Blocked"
 items = [
 ]
 
@@ -36,11 +37,14 @@ items = [
 name = "map-chalk-types-to-rustc-types"
 label = "Map chalk types to rustc types"
 items = [
-  { label = "Make intern methods take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328" },
-  { label = "Make data methods take &amp;self" },
+  { label = "Rename Projection to Alias", status="Complete" }, 
+  { label = "Make intern methods take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Assigned" },
+  { label = "Make data methods take &amp;self", status="Blocked" },
+  { label = "Align placeholders and ty::Param" },
   { label = "Move Identifier to TypeFamily" },
-  { label = "Adapt rutsc's debruijn index model", port="debruijn" },
+  { label = "Adapt rustc's debruijn index model", port="debruijn", status="Assigned", href="https://github.com/rust-lang/chalk/issues/334" },
   { label = "Remove all vectors, boxes" },
+  { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333" },
 ]
 
 [[group]]
@@ -52,4 +56,20 @@ items = [
   { label="create" },
 ]
 
+[[group]]
+name = "advanced-features"
+label = "Advanced features"
+requires = [ "rustc-integration-mvp" ]
+status = "Blocked"
+items = [
+  { label="implied bounds" },
+]
 
+[[group]]
+name = "library"
+label = "Usable as a standalone library for traits solving"
+requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
+status = "Blocked"
+items = [
+  { label="implied bounds" },
+]
