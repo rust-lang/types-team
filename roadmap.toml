@@ -112,7 +112,7 @@ items = [
 [[goal]]
 name = "library"
 label = "Chalk usable as a standalone library for traits solving"
-requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
+requires = [ "rustc-integration-mvp", "rust-analyzer-integration", "chalk-debugging" ]
 
 [[goal]]
 name = "gats"
