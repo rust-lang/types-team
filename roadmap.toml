@@ -65,7 +65,7 @@ items = [
 name = "chalk-builtin-traits"
 label = "Extend chalk-solve with knowledge of builtin-traits"
 items = [
-  { label="support the `Sized` trait", status="Blocked" },
+  { label="support the `Sized` trait", status="Blocked", href="https://github.com/rust-lang/chalk/issues/261" },
   { label="support the `Clone` trait", status="Blocked" },
   { label="support the `Copy` trait", status="Blocked" },
   { label="support the `Unsized` trait", status="Blocked" },
@@ -96,7 +96,8 @@ label = "Explore proposed language features"
 requires = [ "rustc-integration-mvp", "rust-analyzer-integration" ]
 status = "Blocked"
 items = [
-  { label="implied bounds" },
+  { label="Implied bounds" },
+  { label="Specialization", href="https://github.com/rust-lang/chalk/issues/9" },
 ]
 
 [[goal]]
