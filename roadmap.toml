@@ -105,7 +105,7 @@ name = "chalk-debugging"
 label = "Improve ability to debug chalk from within rustc or rust-analyzer"
 requires = [ ]
 items = [
-  { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337" },
+  { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337", status="Assigned" },
   { label="Extract standalone examples automatically" },
 ]
 
