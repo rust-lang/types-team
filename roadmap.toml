@@ -19,7 +19,8 @@ items = [
 name = "impl-trait"
 label = "Model `impl Trait`"
 items = [
-  { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" }
+  { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" },
+  { label = "Sketch out the integration plan", status="Assigned" },
 ]  
 
 [[group]]
@@ -55,17 +56,38 @@ items = [
   { label = "Align placeholders and ty::Param", status="Blocked" },
   { label = "Move Identifier to TypeFamily", status="Complete" },
   { label = "Adapt rustc's debruijn index model", port="debruijn", status="Assigned", href="https://github.com/rust-lang/chalk/issues/334" },
+  { label = "Adapt rustc's representation of regions", status="Blocked" },
   { label = "Remove all vectors, boxes" },
   { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333", port="visit" },
 ]
 
 [[group]]
+name = "chalk-builtin-traits"
+label = "Extend chalk-solve with knowledge of builtin-traits"
+items = [
+  { label="support the `Sized` trait", status="Blocked" },
+  { label="support the `Clone` trait", status="Blocked" },
+  { label="support the `Copy` trait", status="Blocked" },
+  { label="support the `Unsized` trait", status="Blocked" },
+]
+
+[[group]]
+name = "chalk-const"
+label = "Extend chalk to support constants"
+items = [
+  { label="introduce constant 'kind', alongside types and lifetimes", status="Blocked" },
+]
+
+[[group]]
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
-requires = [ "map-chalk-types-to-rustc-types" ]
+requires = [ "map-chalk-types-to-rustc-types", "chalk-const" ]
 items = [
-  { label="remove old chalk support" },
-  { label="create" },
+  { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
+  { label="exploratory integration to better uncover requirements", status="Assigned" },
+  { label="map rustc types to chalk types", status="Blocked" },
+  { label="map rustc predicates to chalk goals, clauses", status="Blocked" },
+  { label="implement RustIrDatabase in trait", status="Blocked" },
 ]
 
 [[group]]
