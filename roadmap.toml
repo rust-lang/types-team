@@ -100,6 +100,15 @@ items = [
   { label="Specialization", href="https://github.com/rust-lang/chalk/issues/9" },
 ]
 
+[[group]]
+name = "chalk-debugging"
+label = "Improve ability to debug chalk from within rustc or rust-analyzer"
+requires = [ ]
+items = [
+  { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337" },
+  { label="Extract standalone examples automatically" },
+]
+
 [[goal]]
 name = "library"
 label = "Chalk usable as a standalone library for traits solving"
