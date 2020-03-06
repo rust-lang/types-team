@@ -59,6 +59,7 @@ items = [
   { label = "Adapt rustc's representation of regions", status="Blocked" },
   { label = "Remove all vectors, boxes" },
   { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333", port="visit" },
+  { label = "Add and integrate flags into types and elsewhere" },
 ]
 
 [[group]]
