@@ -51,7 +51,7 @@ items = [
   { label = "Rename Projection to Alias", status="Complete" }, 
   { label = "Make ty intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Complete" },
   { label = "Make ty data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/339", status="Assigned" },
-  { label = "Make other intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/340", status="Assigned" },
+  { label = "Make other intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/340", status="Complete" },
   { label = "Make other data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/341", status="Assigned" },
   { label = "Align placeholders and ty::Param", status="Blocked" },
   { label = "Move Identifier to TypeFamily", status="Complete" },
