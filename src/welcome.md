@@ -28,7 +28,11 @@ knowledge. Feel free to come and lurk!
 
 [ce-design]: https://calendar.google.com/event?action=TEMPLATE&tmeid=MnFmbmdkaGV0aXE3Zjc4cjlpNWVjNDRoZXMgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&tmsrc=6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com
 
-You'll find minutes from past meetings in [the minutes directory](minutes).
+You'll find minutes from past meetings in [the minutes
+directory](minutes). We also keep have a
+[hackmd](https://hackmd.io/nrhN5A8sR2eY9UdfJTKcJg?edit) where we keep
+a log of what's been happening and track possible agendas for upcoming
+meetings.
 
 ## Chat forum
 
