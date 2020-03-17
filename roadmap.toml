@@ -63,6 +63,14 @@ items = [
 ]
 
 [[group]]
+name = "chalk-fn-traits"
+label = "Extend chalk-solve with knowledge of fn traits and closures"
+items = [
+  { label="add closure and fn def types", status="Blocked" },
+  { label="support the `Fn` trait", status="Blocked" },
+]
+
+[[group]]
 name = "chalk-builtin-traits"
 label = "Extend chalk-solve with knowledge of builtin-traits"
 items = [
@@ -82,7 +90,7 @@ items = [
 [[group]]
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
-requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin-traits" ]
+requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin-traits", "chalk-fn-traits" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
   { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Assigned" },
