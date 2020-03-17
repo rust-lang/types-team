@@ -12,7 +12,7 @@ name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
   { label = "Write-up the idea that Niko had", status="Complete", href="https://gist.github.com/nikomatsakis/bfbdbe588d6fc61ecb09e3b51847fb7c" },
-  { label = "Build prototype and evaluate", status="Blocked" },
+  { label = "Build prototype and evaluate", status="Assigned", href="https://github.com/rust-lang/chalk/issues/351" },
 ]
 
 [[group]]
@@ -20,7 +20,6 @@ name = "impl-trait"
 label = "Model `impl Trait`"
 items = [
   { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" },
-  { label = "Sketch out the integration plan", status="Assigned" },
 ]  
 
 [[group]]
