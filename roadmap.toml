@@ -12,7 +12,7 @@ name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
   { label = "Write-up the idea that Niko had", status="Complete", href="https://gist.github.com/nikomatsakis/bfbdbe588d6fc61ecb09e3b51847fb7c" },
-  { label = "Build prototype and evaluate", status="Blocked" },
+  { label = "Build prototype and evaluate", status="Assigned", href="https://github.com/rust-lang/chalk/issues/351" },
 ]
 
 [[group]]
@@ -20,7 +20,6 @@ name = "impl-trait"
 label = "Model `impl Trait`"
 items = [
   { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" },
-  { label = "Sketch out the integration plan", status="Assigned" },
 ]  
 
 [[group]]
@@ -63,6 +62,14 @@ items = [
 ]
 
 [[group]]
+name = "chalk-fn-traits"
+label = "Extend chalk-solve with knowledge of fn traits and closures"
+items = [
+  { label="add closure and fn def types", status="Blocked" },
+  { label="support the `Fn` trait", status="Blocked" },
+]
+
+[[group]]
 name = "chalk-builtin-traits"
 label = "Extend chalk-solve with knowledge of builtin-traits"
 items = [
@@ -82,7 +89,7 @@ items = [
 [[group]]
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
-requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin-traits" ]
+requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin-traits", "chalk-fn-traits" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
   { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Assigned" },
