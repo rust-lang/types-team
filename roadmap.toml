@@ -73,6 +73,7 @@ items = [
 name = "chalk-builtin-traits"
 label = "Extend chalk-solve with knowledge of builtin-traits"
 items = [
+  { label="create concept of well-known traits", status="Assigned", href="https://github.com/rust-lang/chalk/issues/356" },
   { label="support the `Sized` trait", status="Blocked", href="https://github.com/rust-lang/chalk/issues/261" },
   { label="support the `Clone` trait", status="Blocked" },
   { label="support the `Copy` trait", status="Blocked" },
