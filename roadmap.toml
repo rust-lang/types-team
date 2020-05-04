@@ -12,7 +12,8 @@ name = "recursive-solver"
 label = "Experiment with a recursive chalk solver"
 items = [
   { label = "Write-up the idea that Niko had", status="Complete", href="https://gist.github.com/nikomatsakis/bfbdbe588d6fc61ecb09e3b51847fb7c" },
-  { label = "Build prototype and evaluate", status="Assigned", href="https://github.com/rust-lang/chalk/issues/351" },
+  { label = "Build prototype", status="Complete", href="https://github.com/rust-lang/chalk/issues/351" },
+  { label = "Resolve coinductive semantics", status="Assigned", href="https://github.com/rust-lang/chalk/issues/399" },
 ]
 
 [[group]]
@@ -40,8 +41,9 @@ requires = [
   "map-chalk-types-to-rustc-types:debruijn",
   "map-chalk-types-to-rustc-types:visit"
 ]
-status = "Blocked"
+status = "Assigned"
 items = [
+  { label = "Implementation" }
 ]
 
 [[group]]
@@ -51,56 +53,50 @@ href = "https://github.com/rust-lang/wg-traits/issues/16"
 items = [
   { label = "Rename Projection to Alias", status="Complete" }, 
   { label = "Make ty intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Complete" },
-  { label = "Make ty data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/339", status="Assigned" },
+  { label = "Make ty data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/339", status="Complete" },
   { label = "Make other intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/340", status="Complete" },
-  { label = "Make other data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/341", status="Assigned" },
+  { label = "Make other data methods take &amp;self", href="https://github.com/rust-lang/chalk/issues/341", status="Complete" },
   { label = "Align placeholders and ty::Param", status="Blocked" },
   { label = "Move Identifier to TypeFamily", status="Complete" },
   { label = "Adapt rustc's debruijn index model", port="debruijn", status="Complete", href="https://github.com/rust-lang/chalk/issues/334" },
   { label = "Adapt rustc's representation of late-bound items", status="Blocked" },
-  { label = "Remove all vectors, boxes", href="https://github.com/rust-lang/chalk/issues/369", status="Assigned" },
+  { label = "Remove all vectors, boxes", href="https://github.com/rust-lang/chalk/issues/369", status="Complete" },
   { label = "Introduce a `Visit` trait", href="https://github.com/rust-lang/chalk/issues/333", status="Complete", port="visit" },
   { label = "Add and integrate flags into types and elsewhere" },
 ]
 
 [[group]]
-name = "chalk-fn-traits"
-label = "Extend chalk-solve with knowledge of fn traits and closures"
-items = [
-  { label="add closure and fn def types", status="Blocked" },
-  { label="support the `Fn` trait", status="Blocked" },
-]
-
-[[group]]
-name = "chalk-builtin-traits"
-label = "Extend chalk-solve with knowledge of builtin-traits"
+name = "chalk-builtin"
+label = "Extend chalk-solve with knowledge of builtin traits and types"
 href = "https://github.com/rust-lang/chalk/issues/363"
 items = [
-  { label="create concept of well-known traits", status="Assigned", href="https://github.com/rust-lang/chalk/issues/356" },
+  { label="create concept of well-known traits", status="Complete", href="https://github.com/rust-lang/chalk/issues/356" },
   { label="support the `Sized` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/261" },
   { label="support the `Clone` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Copy` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
-  { label="support the `Unsized` trait" },
+  { label="support the `Unsized` trait", status="Assigned", href="https://github.com/rust-lang/chalk/pull/427" },
+  { label="add closure and fn def types", status="Blocked" },
+  { label="support the `Fn` traits", status="Blocked" },
 ]
 
 [[group]]
 name = "chalk-const"
 label = "Extend chalk to support constants"
 items = [
-  { label="introduce constant 'kind', alongside types and lifetimes", status="Assigned" },
+  { label="introduce constant 'kind', alongside types and lifetimes", status="Assigned", href="https://github.com/rust-lang/chalk/pull/393" },
 ]
 
 [[group]]
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
 href = "https://github.com/rust-lang/wg-traits/issues/18"
-requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin-traits", "chalk-fn-traits" ]
+requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
   { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Assigned" },
-  { label="map rustc types to chalk types", status="Blocked" },
-  { label="map rustc predicates to chalk goals, clauses", status="Blocked" },
-  { label="implement RustIrDatabase in trait", status="Blocked" },
+  { label="map rustc types to chalk types", status="Assigned" },
+  { label="map rustc predicates to chalk goals, clauses", status="Assigned" },
+  { label="implement RustIrDatabase in trait", status="Assigned" },
 ]
 
 [[group]]
