@@ -75,7 +75,7 @@ items = [
   { label="support the `Clone` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Copy` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Unsized` trait", status="Assigned", href="https://github.com/rust-lang/chalk/pull/427" },
-  { label="add closure and fn def types", status="Blocked" },
+  { label="extend `TypeName` with builtin types", href="https://github.com/rust-lang/chalk/issues/368" },
   { label="support the `Fn` traits", status="Blocked" },
 ]
 
