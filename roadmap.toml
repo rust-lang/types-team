@@ -1,6 +1,18 @@
 [[group]]
+name = "rustc-universe-transition"
+label = "rustc universe transition"
+href = "https://github.com/rust-lang/rust/issues/56105"
+items = [
+  { label = "introduce universe system into rustc", status="Complete", href="https://github.com/rust-lang/rust/pull/65232" },
+  { label = "extend NLL solver with new universes", status="Complete", href="https://github.com/rust-lang/rust/pull/70950" },
+  { label = "resolve wasm-bindgen interaction", status="Assigned" },
+]
+
+[[group]]
 name = "align-rustc-predicate"
 label = "Align rustc predicates with chalk predicates"
+requires = ["rustc-universe-transition"]
+href = "https://github.com/rust-lang/compiler-team/issues/285"
 items = [
   { label = "isolate Binder into a Forall goal" },
   { label = "introduce Implication" },
@@ -22,6 +34,16 @@ label = "Model `impl Trait`"
 items = [
   { label = "Preliminary model for opaque types where hidden types are known", status="Assigned", ref = "https://github.com/rust-lang/chalk/issues/335" },
 ]  
+
+[[group]]
+name = "chalk-outlives"
+label = "Extend chalk with outlives goals"
+href = "https://github.com/rust-lang/chalk/issues/435"
+items = [
+  { label = "add region outlives goals" },
+  { label = "add type outlives goals" },
+  { label = "add type outlives constraints" },
+]
 
 [[group]]
 name = "rust-analyzer-integration"
@@ -74,6 +96,7 @@ items = [
   { label="support the `Sized` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/261" },
   { label="support the `Clone` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Copy` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
+  { label="model `ObjectSafe` goals", status="Assigned", href="https://github.com/rust-lang/chalk/pull/434" },
   { label="support the `Unsized` trait", status="Assigned", href="https://github.com/rust-lang/chalk/pull/427" },
   { label="extend `TypeName` with builtin types", href="https://github.com/rust-lang/chalk/issues/368" },
   { label="support the `Fn` traits", status="Blocked" },
@@ -90,7 +113,7 @@ items = [
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
 href = "https://github.com/rust-lang/wg-traits/issues/18"
-requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin" ]
+requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin", "chalk-outlives" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
   { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Assigned" },
