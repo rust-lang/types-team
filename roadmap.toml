@@ -96,7 +96,7 @@ items = [
   { label="support the `Sized` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/261" },
   { label="support the `Clone` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Copy` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
-  { label="model `ObjectSafe` goals", status="Assigned", href="https://github.com/rust-lang/chalk/pull/434" },
+  { label="model `ObjectSafe` goals", status="Complete", href="https://github.com/rust-lang/chalk/pull/434" },
   { label="support the `Unsized` trait", status="Assigned", href="https://github.com/rust-lang/chalk/pull/427" },
   { label="extend `TypeName` with builtin types", href="https://github.com/rust-lang/chalk/issues/368" },
   { label="support the `Fn` traits", status="Blocked" },
@@ -116,10 +116,10 @@ href = "https://github.com/rust-lang/wg-traits/issues/18"
 requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin", "chalk-outlives" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
-  { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Assigned" },
-  { label="map rustc types to chalk types", status="Assigned" },
-  { label="map rustc predicates to chalk goals, clauses", status="Assigned" },
-  { label="implement RustIrDatabase in trait", status="Assigned" },
+  { label="exploratory integration to better uncover requirements", href="https://github.com/rust-lang/rust/pull/69406", status="Complete" },
+  { label="map rustc types to chalk types", status="Complete" },
+  { label="map rustc predicates to chalk goals, clauses", status="Complete" },
+  { label="implement RustIrDatabase in trait", status="Complete" },
 ]
 
 [[group]]
@@ -138,7 +138,7 @@ label = "Improve ability to debug chalk from within rustc or rust-analyzer"
 requires = [ ]
 items = [
   { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337", status="Assigned" },
-  { label="Extract standalone examples automatically" },
+  { label="Extract standalone examples automatically", href="https://github.com/rust-lang/chalk/issues/365" },
 ]
 
 [[goal]]
