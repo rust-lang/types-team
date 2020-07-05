@@ -40,9 +40,9 @@ name = "chalk-outlives"
 label = "Extend chalk with outlives goals"
 href = "https://github.com/rust-lang/chalk/issues/435"
 items = [
-  { label = "add region outlives goals" },
-  { label = "add type outlives goals" },
-  { label = "add type outlives constraints" },
+  { label = "add region outlives goals", status = "Complete" },
+  { label = "add type outlives goals", status = "Complete" },
+  { label = "add type outlives constraints", status = "Complete" },
 ]
 
 [[group]]
@@ -97,16 +97,16 @@ items = [
   { label="support the `Clone` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="support the `Copy` trait", status="Complete", href="https://github.com/rust-lang/chalk/issues/363" },
   { label="model `ObjectSafe` goals", status="Complete", href="https://github.com/rust-lang/chalk/pull/434" },
-  { label="support the `Unsized` trait", status="Assigned", href="https://github.com/rust-lang/chalk/pull/427" },
+  { label="support the `Unsized` trait", status="Complete", href="https://github.com/rust-lang/chalk/pull/427" },
   { label="extend `TypeName` with builtin types", href="https://github.com/rust-lang/chalk/issues/368" },
-  { label="support the `Fn` traits", status="Blocked" },
+  { label="support the `Fn` traits", status="Complete" },
 ]
 
 [[group]]
 name = "chalk-const"
 label = "Extend chalk to support constants"
 items = [
-  { label="introduce constant 'kind', alongside types and lifetimes", status="Assigned", href="https://github.com/rust-lang/chalk/pull/393" },
+  { label="introduce constant 'kind', alongside types and lifetimes", status="Complete", href="https://github.com/rust-lang/chalk/pull/393" },
 ]
 
 [[group]]
@@ -137,8 +137,8 @@ name = "chalk-debugging"
 label = "Improve ability to debug chalk from within rustc or rust-analyzer"
 requires = [ ]
 items = [
-  { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337", status="Assigned" },
-  { label="Extract standalone examples automatically", href="https://github.com/rust-lang/chalk/issues/365" },
+  { label="Integrate tracing library", href="https://github.com/rust-lang/chalk/issues/337", status="Complete" },
+  { label="Extract standalone examples automatically", href="https://github.com/rust-lang/chalk/issues/365", status="Assigned" },
 ]
 
 [[goal]]
