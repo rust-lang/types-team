@@ -13,10 +13,8 @@ rust:
   - stable
 
 before_script:
-  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
-  - (test -x $HOME/.cargo/bin/skill-tree || cargo install --vers "^1.3.1" skill-tree)
-  - cargo install-update -a
+  - cargo install --version "^0.3" mdbook
+  - cargo install --version "^1.3.1" skill-tree
 
 script:
   - mdbook build && mdbook test
