@@ -1,9 +1,9 @@
-# Traits Working Group
+# Types Team
 
-# Scope and purpose
+## Scope and purpose
 
-The **traits** working group is dedicated to improving the trait
-system implementation in rustc. This working group is a collaboration
+The **types** team is dedicated to improving the trait
+system implementation in rustc. This team is a collaboration
 between the [lang team] and the compiler team. We have a number of inter-related
 goals:
 
@@ -32,17 +32,16 @@ You'll find minutes from past meetings in [the minutes directory](minutes).
 
 ## Chat forum
 
-On [the rust-lang Zulip][z], in [the `#wg-traits` stream][s].
+On [the rust-lang Zulip][z], in [the `#t-types` stream][s].
 
 [z]: https://rust-lang.zulipchat.com/
-[s]: https://rust-lang.zulipchat.com/#narrow/stream/144729-wg-traits
+[s]: https://rust-lang.zulipchat.com/#narrow/stream/144729-t-types
 
 ## Dedicated repository
 
-Documents related to the wg-traits working group are stored on a
-dedicated repository, [rust-lang/wg-traits]. This repository contains
+Documents related to the types team are stored on a
+dedicated repository, [rust-lang/types-team]. This repository contains
 meeting minutes, past sprints, as well as draft RFCs and other
 documents.
 
-
-
+[rust-lang/types-team]: https://github.com/rust-lang/types-team

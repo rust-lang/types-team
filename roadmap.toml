@@ -71,7 +71,7 @@ items = [
 [[group]]
 name = "map-chalk-types-to-rustc-types"
 label = "Map chalk types to rustc types"
-href = "https://github.com/rust-lang/wg-traits/issues/16"
+href = "https://github.com/rust-lang/types-team/issues/16"
 items = [
   { label = "Rename Projection to Alias", status="Complete" }, 
   { label = "Make ty intern method take &amp;self", href="https://github.com/rust-lang-nursery/chalk/issues/328", status="Complete" },
@@ -112,7 +112,7 @@ items = [
 [[group]]
 name = "rustc-integration-mvp"
 label = "Integrate chalk-solve into rustc"
-href = "https://github.com/rust-lang/wg-traits/issues/18"
+href = "https://github.com/rust-lang/types-team/issues/18"
 requires = [ "map-chalk-types-to-rustc-types", "chalk-const", "chalk-builtin", "chalk-outlives" ]
 items = [
   { label="remove old chalk support", status="Complete", href="https://github.com/rust-lang/rust/pull/69247" },
@@ -150,4 +150,3 @@ requires = [ "rustc-integration-mvp", "rust-analyzer-integration", "chalk-debugg
 name = "gats"
 label = "Deploy GATs in Rust nightly"
 requires = [ "align-rustc-predicate" ]
-
