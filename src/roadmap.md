@@ -12,7 +12,8 @@ these issue lists on Github:
 We are working from a 6-week "sprint cycle". We're still working out
 the details of how we organize our sprints. For now, if you'd like to
 claim one of the above issues or get involved, though, drop by on [the
-rust-lang Zulip] in the `#wg-traits` stream and say hello!
+rust-lang Zulip] in the [`#t-types`] stream and say hello!
 
 [the rust-lang Zulip]: https://rust-lang.zulipchat.com/
+[`#t-types`]: https://rust-lang.zulipchat.com/#narrow/stream/144729-t-types
 [dr]: roadmap/skill-tree.html
