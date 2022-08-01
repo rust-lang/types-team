@@ -1,1 +1,8 @@
+[major-change]
+second_label = "final-comment-period"
+meeting_label = "to-announce"
+open_extra_text = "cc @rust-lang/types"
+zulip_stream = 326866 # #T-types/nominated
+zulip_ping = "T-types"
+
 [assign]
