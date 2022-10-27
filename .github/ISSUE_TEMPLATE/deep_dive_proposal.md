@@ -1,7 +1,7 @@
 ---
 name: Deep dive proposal
 about: Propose a deep dive
-labels: deep-dive-proposal
+labels: deep-dive-proposal,T-types
 ---
 
 ### Summary
