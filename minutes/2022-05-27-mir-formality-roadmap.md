@@ -1,5 +1,7 @@
 # Formality roadmap
 
+Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-types.2Fmeetings/topic/2022-05-27/near/284128865
+
 ## Goals
 
 * Complete model of safe Rust including all static checks + operational semantics

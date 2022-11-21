@@ -1,5 +1,7 @@
 # 2022-09-02 planning meeting
 
+Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-types.2Fmeetings/topic/meeting.202022-09-02.20planning/near/296814921
+
 ## Proposed meetings
 
 ### The meeting proposals

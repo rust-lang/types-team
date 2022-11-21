@@ -1,5 +1,7 @@
 # 2022-07-01 Planning meeting
 
+Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-types.2Fmeetings/topic/meeting.202022-07-01/near/288033700
+
 ## Initiative updates
 
 ### NLL
