@@ -26,7 +26,7 @@ topics ([calendar event][ce-design]).  These meetings take place on Zulip (see b
 not just to figure out what we want to do, it's also a way to spread
 knowledge. Feel free to come and lurk!
 
-[ce-design]: https://calendar.google.com/event?action=TEMPLATE&tmeid=MnFmbmdkaGV0aXE3Zjc4cjlpNWVjNDRoZXMgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&tmsrc=6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com
+[ce-design]: https://calendar.google.com/calendar/u/0/embed?src=6u5rrtce6lrtv07pfi3damgjus@group.calendar.google.com
 
 You'll find minutes from past meetings in [the minutes directory](minutes).
 
