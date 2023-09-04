@@ -1,0 +1,172 @@
+digraph g {
+graph [ rankdir = "LR" ];
+node [ fontsize="16", shape = "ellipse" ];
+edge [ ];
+"rustc-universe-transition" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/rust/issues/56105">rustc universe transition</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/rust/pull/65232"><s>introduce universe system into rustc</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/rust/pull/70950"><s>extend NLL solver with new universes</s></td></tr>
+    <tr><td bgcolor="cornsilk">🛠️</td><td bgcolor="cornsilk">resolve wasm-bindgen interaction</td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"align-rustc-predicate" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/compiler-team/issues/285">Align rustc predicates with chalk predicates</td></tr>
+    <tr><td bgcolor="cornsilk">🙋</td><td fontcolor="red" bgcolor="cornsilk">isolate Binder into a Forall goal</td></tr>
+    <tr><td bgcolor="cornsilk">🙋</td><td fontcolor="red" bgcolor="cornsilk">introduce Implication</td></tr>
+    <tr><td bgcolor="cornsilk">🙋</td><td fontcolor="red" bgcolor="cornsilk">introduce Forall goals with types</td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"recursive-solver" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Experiment with a recursive chalk solver</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://gist.github.com/nikomatsakis/bfbdbe588d6fc61ecb09e3b51847fb7c"><s>Write-up the idea that Niko had</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/351"><s>Build prototype</s></td></tr>
+    <tr><td bgcolor="cornsilk">🛠️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/399"><u>Resolve coinductive semantics</u></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"impl-trait" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Model `impl Trait`</td></tr>
+    <tr><td bgcolor="cornsilk">🛠️</td><td bgcolor="cornsilk">Preliminary model for opaque types where hidden types are known</td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"chalk-outlives" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/chalk/issues/435">Extend chalk with outlives goals</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>add region outlives goals</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>add type outlives goals</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>add type outlives constraints</s></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"rust-analyzer-integration" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Integrate with rust-analyzer</td></tr>
+    <tr><td bgcolor="cornsilk" port="askfor_in">🙋</td><td fontcolor="red" bgcolor="cornsilk" port="askfor_out">Ensure that we never need to ask for impls of unknown types</td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk"><i><font color="lightgrey">Deal with performance problems</font></i></td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk"><i><font color="lightgrey">Deal with memory usage</font></i></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"syntactic-semantic-equality" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/chalk/issues/364">Separate syntactic equality from semantic equality</td></tr>
+    <tr><td bgcolor="cornsilk">🛠️</td><td bgcolor="cornsilk">Implementation</td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"map-chalk-types-to-rustc-types" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/types-team/issues/16">Map chalk types to rustc types</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>Rename Projection to Alias</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang-nursery/chalk/issues/328"><s>Make ty intern method take &amp;self</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/339"><s>Make ty data methods take &amp;self</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang-nursery/chalk/issues/340"><s>Make other intern method take &amp;self</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/341"><s>Make other data methods take &amp;self</s></td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk"><i><font color="lightgrey">Align placeholders and ty::Param</font></i></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>Move Identifier to TypeFamily</s></td></tr>
+    <tr><td bgcolor="cornsilk" port="debruijn_in">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/334" port="debruijn_out"><s>Adapt rustc's debruijn index model</s></td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk"><i><font color="lightgrey">Adapt rustc's representation of late-bound items</font></i></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/369"><s>Remove all vectors, boxes</s></td></tr>
+    <tr><td bgcolor="cornsilk" port="visit_in">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/333" port="visit_out"><s>Introduce a `Visit` trait</s></td></tr>
+    <tr><td bgcolor="cornsilk">🙋</td><td fontcolor="red" bgcolor="cornsilk">Add and integrate flags into types and elsewhere</td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"chalk-builtin" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/chalk/issues/363">Extend chalk-solve with knowledge of builtin traits and types</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/356"><s>create concept of well-known traits</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/261"><s>support the `Sized` trait</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/363"><s>support the `Clone` trait</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/363"><s>support the `Copy` trait</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/pull/434"><s>model `ObjectSafe` goals</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/pull/427"><s>support the `Unsized` trait</s></td></tr>
+    <tr><td bgcolor="cornsilk">🙋</td><td fontcolor="red" bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/368"><u>extend `TypeName` with builtin types</u></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>support the `Fn` traits</s></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"chalk-const" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Extend chalk to support constants</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/pull/393"><s>introduce constant 'kind', alongside types and lifetimes</s></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"rustc-integration-mvp" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2" href="https://github.com/rust-lang/types-team/issues/18">Integrate chalk-solve into rustc</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/rust/pull/69247"><s>remove old chalk support</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/rust/pull/69406"><s>exploratory integration to better uncover requirements</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>map rustc types to chalk types</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>map rustc predicates to chalk goals, clauses</s></td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk"><s>implement RustIrDatabase in trait</s></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"features" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Explore proposed language features</td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk"><i><font color="lightgrey">Implied bounds</font></i></td></tr>
+    <tr><td bgcolor="cornsilk">⌚</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/9"><i><font color="lightgrey">Specialization</font></i></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"chalk-debugging" [
+  label = <<table>
+    <tr><td bgcolor="darkgoldenrod" port="all" colspan="2">Improve ability to debug chalk from within rustc or rust-analyzer</td></tr>
+    <tr><td bgcolor="cornsilk">☑️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/337"><s>Integrate tracing library</s></td></tr>
+    <tr><td bgcolor="cornsilk">🛠️</td><td bgcolor="cornsilk" href="https://github.com/rust-lang/chalk/issues/365"><u>Extract standalone examples automatically</u></td></tr>
+  </table>>
+  shape = "none"
+  margin = 0
+]
+"library" [
+  label = "Chalk usable as a standalone library for traits solving"
+  shape = "note"
+  margin = 0
+  style = "filled"
+  fillcolor = "darkgoldenrod"
+]
+"gats" [
+  label = "Deploy GATs in Rust nightly"
+  shape = "note"
+  margin = 0
+  style = "filled"
+  fillcolor = "darkgoldenrod"
+]
+"rustc-universe-transition":all -> "align-rustc-predicate":all;
+"impl-trait":all -> "rust-analyzer-integration":all;
+"syntactic-semantic-equality":all -> "rust-analyzer-integration":askfor;
+"map-chalk-types-to-rustc-types":debruijn_out -> "syntactic-semantic-equality":all;
+"map-chalk-types-to-rustc-types":visit_out -> "syntactic-semantic-equality":all;
+"map-chalk-types-to-rustc-types":all -> "rustc-integration-mvp":all;
+"chalk-const":all -> "rustc-integration-mvp":all;
+"chalk-builtin":all -> "rustc-integration-mvp":all;
+"chalk-outlives":all -> "rustc-integration-mvp":all;
+"rustc-integration-mvp":all -> "features":all;
+"rust-analyzer-integration":all -> "features":all;
+"rustc-integration-mvp":all -> "library";
+"rust-analyzer-integration":all -> "library";
+"chalk-debugging":all -> "library";
+"align-rustc-predicate":all -> "gats";
+}
