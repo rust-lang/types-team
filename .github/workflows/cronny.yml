@@ -1,0 +1,52 @@
+name: weekly cron job
+
+on:
+  schedule:
+    - cron: '44 4 * * *' # At 4:44 UTC every day.
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  cake:
+    name: Pingy McPingface
+    runs-on: ubuntu-latest
+    steps:
+      # Send a Zulip notification
+      - name: Install zulip-send
+        run: pip3 install zulip
+      - name: Send Zulip notification
+        env:
+          ZULIP_BOT_EMAIL: ${{ secrets.ZULIP_BOT_EMAIL }}
+          ZULIP_API_TOKEN: ${{ secrets.ZULIP_API_TOKEN }}
+        run: |
+          ~/.local/bin/zulip-send --user $ZULIP_BOT_EMAIL --api-key $ZULIP_API_TOKEN --site https://rust-lang.zulipchat.com \
+            --stream miri --subject "Weekly reminder to do The Thing (TM)" \
+            --message 'Dear @*T-types*,
+
+          It would appear that the [Weekly cron job build]('"https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"') wants you do to something.
+
+          Thanks in advance!
+          Sincerely,
+          Pingy McPingface'
+
+      - name: setup bot git name and email
+        run: |
+          git config --global user.name 'Pingy McPingface'
+          git config --global user.email 'types@cron.bot'
+      - name: Push changes to a branch
+        run: |
+          BRANCH="weekly-$(date -u +%Y-%m-%d)"
+          git switch -c $BRANCH
+          git push -u origin $BRANCH
+      - name: Create Pull Request
+        run: |
+          PR=$(gh pr create -B master --title 'There ya go' --body 'bop')
+          ~/.local/bin/zulip-send --user $ZULIP_BOT_EMAIL --api-key $ZULIP_API_TOKEN --site https://rust-lang.zulipchat.com \
+            --stream t-types/meetings --subject "Pingy McPingface ($(date -u +%Y-%m))" \
+            --message "A PR [has been automatically created]($PR) for your convenience."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ZULIP_BOT_EMAIL: ${{ secrets.ZULIP_BOT_EMAIL }}
+          ZULIP_API_TOKEN: ${{ secrets.ZULIP_API_TOKEN }}
