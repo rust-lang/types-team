@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
         run: skill-tree roadmap.toml book/roadmap
 
       - name: Deploy GitHub Pages
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: |
           git worktree add gh-pages gh-pages
           git config user.name "Deploy from CI"
