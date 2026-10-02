@@ -8,7 +8,7 @@ Zulip meeting link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-type
 
 ## 2022-09-16 - Status Update T-types Deep Dive
 
-Full status board: 
+Full status board:
 https://github.com/orgs/rust-lang/projects/22/views/1
 
 * [patterns constraining hidden type is a perf regression](https://github.com/rust-lang/rust/issues/96572)
@@ -167,7 +167,7 @@ fn foo(x: Foo) {
         // this sets the type
         let a: Foo = (42_i32, String::new());
     }
-    
+
     let y: (_, _) = x;
     // can access the types here.
     let z = y.0 + 1;
@@ -235,7 +235,7 @@ with our recommendation being option 2.
 
 > It is possible to replace any use of `impl Trait` in return types with a type alias \[..\] without any change in behavior.
 
-Really? Doesn't that affect the scope of constraining uses, which in turn may make a different in some cases? 
+Really? Doesn't that affect the scope of constraining uses, which in turn may make a different in some cases?
 
 **Meeting discussion:** [Discussed here](https://rust-lang.zulipchat.com/#narrow/stream/326132-t-types.2Fmeetings/topic/2022-09-16.20TAIT.20stabilization.20finalizations/near/299164426) and concluded that it is equivalent, but only if you add modules and things to control the scope.
 
@@ -276,7 +276,7 @@ fn foo(x: Foo) {
         // this sets the type
         let a: Foo = (42_i32, String::new());
     }
-    
+
     let y: (_, _) = x;
     // can access the types here.
     let z = y.0 + 1;
@@ -352,14 +352,14 @@ oli replied "we reverted that and are sticking to the existing behaviour", but w
 
 nikomatsakis: we should talk about a-mir-formality and what this looks like! I'll give that some thought. I think we're at the point where we could plausibly model this.
 
-**Meeting discussion:** None really. :) 
+**Meeting discussion:** None really. :)
 
 ## 2022-05-12
 
 ### Issues that need decision
 
 https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3AI-needs-decision+label%3AF-type_alias_impl_trait
-    
+
 * [rust-lang/rust#96572](https://github.com/rust-lang/rust/issues/96572): TAIT: "unconstrained opaque type" error even if it's constrained
     * MIR does not see the tuple type at the point of the move. It just sees accesses to the fields.
     * HIR typeck is fine, but MIR-typeck has a fit.
@@ -394,7 +394,7 @@ https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3AI-needs-decision+la
         } else {
             // below error goes away
             std::iter::empty().collect()
-            //~^ ERROR `Foo` cannot be built from an iterator over elements of type `_` 
+            //~^ ERROR `Foo` cannot be built from an iterator over elements of type `_`
         }
     }
     ```
@@ -411,7 +411,7 @@ fn foo(b: bool) -> Foo {
         // below error goes away
         std::iter::empty().collect() // Here: the return type is inferred to be the opaque type `Foo`
         // collect requires that `Foo: FromIterator<Item = ?T>`
-        // but the *opaque type* does not 
+        // but the *opaque type* does not
         //
         // separately, we unify `Foo` and `Vec<i32>`
     }
@@ -523,7 +523,7 @@ fn weird() -> impl Sized {
     * opaque type has no bounds, but defining use has a bound on the generic parameter.
     * dies in codegen when someone transmutes into the opaque type.
     * this is reasonable but there is some mishandling with closures; oli has "fix" in https://github.com/rust-lang/rust/pull/96899
-    
+
 Next action items, fix everything in https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3AF-type_alias_impl_trait+assignee%3Aoli-obk (10 issues right now)
 
 Next action item: oli should look at `unconstrained_something_something`
@@ -727,7 +727,7 @@ impl T for u32 {}
 
 fn should_ret_unit() -> impl T {
     loop {
-        
+
     }
 }
 
@@ -905,7 +905,7 @@ fn foo(mut x: Foo) {
 fn foo(mut x: Foo) {
     // no constraint on x
 }
-    
+
 // Not allowed (error) under current setup
 fn foo(x: Foo) {
     println!("{:?}", x);
@@ -940,7 +940,7 @@ static FOOb: impl Debug;
 ```rust
 mod m {
     type Foo = impl Debug;
-    
+
     pub fn foo() -> Foo { 22_u32 }
 }
 
@@ -954,7 +954,7 @@ fn main() {
 ```rust
 mod m {
     type Foo = impl Debug;
-    
+
     pub fn foo() -> Foo { Rc::new(22_u32) }
 }
 
@@ -969,13 +969,13 @@ fn main() {
 ```rust
 mod m {
     type Foo = impl Debug;
-    
+
     pub fn foo() -> Foo { 22_u32 }
 
     pub fn bar() {
         is_send(foo()); // Today: error
     }
-    
+
     fn is_send<T: Send>(_: T) { }
 }
 ```
@@ -985,22 +985,22 @@ mod m {
 ```rust
 mod m {
     type Foo = impl Debug;
-    
+
     // Cycle: probably an error today, but it'd
     // be nice if it eventually worked
-    
-    pub fn foo() -> Foo { 
+
+    pub fn foo() -> Foo {
         is_send(bar())
     }
 
     pub fn bar() {
         is_send(foo()); // Today: error
     }
-    
+
     fn baz() {
         let f: Foo = 22_u32;
     }
-    
+
     fn is_send<T: Send>(_: T) { }
 
 }
@@ -1031,7 +1031,7 @@ fn f() -> impl Future<Output = Foo> {
         * Alternative:
             * everywhere we check inference variables, consider opaque types that are in scope as well
             * ok, niko approves
-    * 
+    *
 
 ### two out-of-scope opaque types referencing one another
 
@@ -1097,7 +1097,7 @@ type Foo2 = impl Debug;
 fn cheat(f: Foo0) {
     let b: Foo1 = f; // Foo1 maps to Foo0
     let c: Foo2 = ; // Foo2 maps to Foo0
-    
+
     let c: u32 = b;
 }
 
@@ -1121,7 +1121,7 @@ In test file:
 // fixme: #123  -- means that the stderr files represent buggy behavior
 ```
 
-x.py test --report foo 
+x.py test --report foo
 
 ## 2021-08-20
 
@@ -1142,7 +1142,7 @@ x.py test --report foo
     * includes various refactorings completed that allow registering obligations at the times needed
 * `min_type_alias_impl_trait` is removed
 * test table is complete, needs review
-* 
+*
 
 ## 2021-07-19
 
@@ -1159,7 +1159,7 @@ x.py test --report foo
 * spastorino:
     * PR https://github.com/rust-lang/rust/pull/87141 is r+d
     * Test case coverage?
-* 
+*
 
 ## 2021-07-16
 
@@ -1280,20 +1280,20 @@ MCP:
     * Rubric:
         * (a) Does this reproduce if you only use `min_type_alias_impl_trait`?
             * If no: no problem
-        * (b) If so, should it? 
+        * (b) If so, should it?
             * If no: file an issue that this case should be excluded by `min_type_alias_impl_trait`
         * (c) Else, tag the issue as `F-min_type_alias_impl_trait`
 * Oli:
-    * repeated TAIT doesn't detect lifetime conflict #86465 
+    * repeated TAIT doesn't detect lifetime conflict #86465
         * https://github.com/rust-lang/rust/pull/86410
         * PR fixes the bug but introduces a new bug
         * Doesn't bootstrap *in stage2* but we don't know why
             * Seems to be specific to nested impl trait
         * `cargo test +rust-0-stage1 src/test/ui`
             * existing tests seem to catch the problem
-    * Defining scope of existential type defined by associated type https://github.com/rust-lang/rust/pull/57961 
+    * Defining scope of existential type defined by associated type https://github.com/rust-lang/rust/pull/57961
         * Out of scope, but we should adjust the example
-            * 
+            *
 
 ```rust=
 trait Foo {

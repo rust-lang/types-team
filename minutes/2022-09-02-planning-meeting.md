@@ -88,4 +88,3 @@ Goal is to have the traits/subtyping code manage HRTB. As part of that, lcnr has
 ### chalk-ty
 
 No progress. Well, small PR: https://github.com/rust-lang/rust/pull/100095
-

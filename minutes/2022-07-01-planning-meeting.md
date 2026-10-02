@@ -14,7 +14,7 @@ Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-t
 
 **Question:** Should we beta revert?
 
-*Situation:* Stabilized NLL. Found 1 bug (#98095) 
+*Situation:* Stabilized NLL. Found 1 bug (#98095)
 
 *Premise:* if we do so, we'll give 6 more weeks to find bugs on nightly
 
@@ -58,7 +58,7 @@ Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-t
 - Fixed some minor bugs related to the feature flag handling and some async fns issues
 - There are 3 issues that I've identified already:
   - in bound normalization tests where some lifetime bounds are not properly mapped to the RPIT, need to investigate this better
-  - the RPIT doesn't have the Sized bound added implicitly, so if nothing in the function has that bound the RPIT is not Sized which is wrong 
+  - the RPIT doesn't have the Sized bound added implicitly, so if nothing in the function has that bound the RPIT is not Sized which is wrong
   - Some const fn issues in async functions, tries to subst &[] with index 0
 - Maybe @nikomatsakis/@oli can explain better than me the 'static problem
 
@@ -108,7 +108,7 @@ No notable progress on the [RFC](https://hackmd.io/ZmpF0ITPRWKx6jYxgCWS7g?both).
 
 ### chalk-ty
 
-* We are now unblocked to move 
+* We are now unblocked to move
 * [Moved `RegionKind` to `rustc_type_ir`](https://github.com/rust-lang/rust/pull/98247)
 * @eggyal continues to make progress on aligning TypeFoldable/TypeVisitor
 * Needs review:
