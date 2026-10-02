@@ -37,7 +37,7 @@ Zulip discussion link: https://rust-lang.zulipchat.com/#narrow/stream/326132-t-t
     * [Deep-dive into some use patterns](https://github.com/rust-lang/rust/pull/96709#issuecomment-1167220240)
 * Other things:
     * Bevy report coming
-    * Niko [synced with lang team to start FCP](https://github.com/rust-lang/lang-team/blob/master/minutes/2022-06-28.md#generic-associated-types)
+    * Niko [synced with lang team to start FCP](https://github.com/rust-lang/lang-team/blob/main/minutes/2022-06-28.md#generic-associated-types)
     * Niko diving into WF stuff
 
 ### TAITs

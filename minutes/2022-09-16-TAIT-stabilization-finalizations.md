@@ -485,7 +485,7 @@ fn weird() -> impl Sized {
     // ok
 }
 fn weird() -> impl Sized {
-    panic!() //ok, falls back to unit with RPIT, `!` with TAIT (on master today)
+    panic!() //ok, falls back to unit with RPIT, `!` with TAIT (on main today)
     // the new proposal would change this to `()` also with TAIT
 }
 ```

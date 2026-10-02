@@ -45,7 +45,7 @@ leftover issues before merging: https://github.com/rust-lang/rust/issues?q=is%3A
 
 ### GATs
 
-Is in FCP as of Wednesday. 8 days left. Should make it into 1.65. Notes from lang meeting: https://github.com/rust-lang/lang-team/blob/master/design-meeting-minutes/2022-08-31-gat-stabilization.md
+Is in FCP as of Wednesday. 8 days left. Should make it into 1.65. Notes from lang meeting: https://github.com/rust-lang/lang-team/blob/main/design-meeting-minutes/2022-08-31-gat-stabilization.md
 
 GATs GATs GATs woooo --oli
 
